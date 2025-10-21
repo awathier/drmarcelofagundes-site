@@ -59,7 +59,8 @@
 }
 
 .dark-background {
-  --background-color: #1977CC;
+  --background-color: #115695;
+  /* --background-color: #1977CC; */
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #252525;
@@ -1110,6 +1111,7 @@ section,
   margin: 10px 0;
   font-weight: 700;
   color: var(--heading-color);
+  margin: 0rem 0rem 0rem 0rem;
 }
 
 .stats .stats-item p {
@@ -1958,5 +1960,34 @@ section .icon-box.destaque:hover {
 }
 
 .mao-link {
-  cursor: pointer;
+  cursor: pointer !important;
+}
+
+.stats-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.counter-wrapper .prefix {
+  position: absolute;
+  left: -1.4rem;
+  /* ajusta a distância horizontal */
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color, #0d6efd);
+}
+
+.counter-wrapper span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color, #0d6efd);
 }

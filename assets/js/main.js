@@ -1,12 +1,11 @@
 /**
 * Template Name: Medilab
 * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
+* Updated: Out 2025
+* Author: BootstrapMade.com + Custom adjustments for Dr. Marcelo
 */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -15,7 +14,9 @@
   function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
-    if (!selectHeader.classList.contains('scroll-up-sticky') && !selectHeader.classList.contains('sticky-top') && !selectHeader.classList.contains('fixed-top')) return;
+    if (!selectHeader.classList.contains('scroll-up-sticky') &&
+      !selectHeader.classList.contains('sticky-top') &&
+      !selectHeader.classList.contains('fixed-top')) return;
     window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
   }
 
@@ -26,7 +27,6 @@
    * Mobile nav toggle
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
-
   function mobileNavToogle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
@@ -39,18 +39,15 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
+      if (document.querySelector('.mobile-nav-active')) mobileNavToogle();
     });
-
   });
 
   /**
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -63,16 +60,13 @@
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove();
-    });
+    window.addEventListener('load', () => preloader.remove());
   }
 
   /**
    * Scroll top button
    */
   let scrollTop = document.querySelector('.scroll-top');
-
   function toggleScrollTop() {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
@@ -80,10 +74,7 @@
   }
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   window.addEventListener('load', toggleScrollTop);
@@ -105,14 +96,44 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  const glightbox = GLightbox({ selector: '.glightbox' });
 
   /**
-   * Initiate Pure Counter
+   * Initiate Pure Counter (para demais contadores simples)
    */
   new PureCounter();
+
+  /**
+   * Custom Counters (animados com valores formatados)
+   */
+  function animateCounter(id, endValue, duration = 2000) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const start = 0;
+    const frameRate = 60;
+    const totalFrames = Math.round(duration / (1000 / frameRate));
+    let frame = 0;
+
+    const counter = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const current = Math.round(start + (endValue - start) * progress);
+      el.textContent = current.toLocaleString("pt-BR");
+
+      if (frame >= totalFrames) {
+        clearInterval(counter);
+        el.textContent = endValue.toLocaleString("pt-BR");
+      }
+    }, 1000 / frameRate);
+  }
+
+  window.addEventListener('load', function () {
+    animateCounter("contador-partos", 10000);    // +10.000 Partos
+    animateCounter("contador-cirurgias", 3000);  // ±3.000 Cirurgias
+    animateCounter("contador-experiencia", 30);  // 30 Anos de Experiência
+    animateCounter("contador-pacientes", 20000); // ±20 Pacientes
+  });
 
   /**
    * Frequently Asked Questions Toggle
@@ -127,11 +148,8 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-      let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
-      );
-
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
+      let config = JSON.parse(swiperElement.querySelector(".swiper-config").innerHTML.trim());
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {
@@ -139,24 +157,21 @@
       }
     });
   }
-
   window.addEventListener("load", initSwiper);
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
-    if (window.location.hash) {
-      if (document.querySelector(window.location.hash)) {
-        setTimeout(() => {
-          let section = document.querySelector(window.location.hash);
-          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-          window.scrollTo({
-            top: section.offsetTop - parseInt(scrollMarginTop),
-            behavior: 'smooth'
-          });
-        }, 100);
-      }
+  window.addEventListener('load', function () {
+    if (window.location.hash && document.querySelector(window.location.hash)) {
+      setTimeout(() => {
+        let section = document.querySelector(window.location.hash);
+        let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+        window.scrollTo({
+          top: section.offsetTop - parseInt(scrollMarginTop),
+          behavior: 'smooth'
+        });
+      }, 100);
     }
   });
 
@@ -164,7 +179,6 @@
    * Navmenu Scrollspy
    */
   let navmenulinks = document.querySelectorAll('.navmenu a');
-
   function navmenuScrollspy() {
     navmenulinks.forEach(navmenulink => {
       if (!navmenulink.hash) return;
@@ -177,7 +191,7 @@
       } else {
         navmenulink.classList.remove('active');
       }
-    })
+    });
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);

@@ -252,41 +252,85 @@
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-user-doctor"></i>
             <div class="stats-item">
+              <div class="counter-wrapper">
+                <span class="prefix"></span>
+                <span id="contador-experiencia"></span>
+              </div>
+              <p>Anos de Experiência</p>
+            </div>
+          </div>
+          <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fa-solid fa-user-doctor"></i>
+            <div class="stats-item">
               <span data-purecounter-start="0" data-purecounter-end="30" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Anos de Experiência</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div> -->
+          <!-- End Stats Item -->
 
           <!-- Pacientes Atendidas -->
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-people-group"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="8000" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Pacientes Atendidas</p>
+              <div class="counter-wrapper">
+                <span class="prefix">±</span>
+                <span id="contador-pacientes"></span>
+              </div>
+              <p>Pacientes</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div>
+          <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fa-solid fa-people-group"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1"
+                class="purecounter"></span>
+              <p>Horas/semana atendimento</p>
+            </div>
+          </div> -->
+          <!-- End Stats Item -->
 
           <!-- Cirurgias Realizadas -->
           <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-heart-pulse"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1200" data-purecounter-duration="1"
+              <div class="counter-wrapper">
+                <span class="prefix">±</span>
+                <span id="contador-cirurgias"></span>
+              </div>
+              <p>Cirurgias ginecologicas</p>
+            </div>
+          </div>
+          <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <div class="stats-item">
+              <span data-purecounter-start="0" data-purecounter-end="3000" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Cirurgias Realizadas</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div> -->
+          <!-- End Stats Item -->
 
           <!-- Partos Acompanhados -->
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+          <!-- <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
             <i class="fa-solid fa-baby"></i>
             <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="2000" data-purecounter-duration="1"
+              <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="1"
                 class="purecounter"></span>
               <p>Partos Acompanhados</p>
             </div>
-          </div><!-- End Stats Item -->
+          </div> -->
+          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+            <i class="fa-solid fa-baby"></i>
+            <div class="stats-item">
+              <div class="counter-wrapper">
+                <span class="prefix">+</span>
+                <span id="contador-partos"></span>
+              </div>
+              <p>Partos</p>
+            </div>
+          </div>
+          <!-- End Stats Item -->
 
         </div>
 
@@ -1155,27 +1199,46 @@
         <!-- Coluna 1 -->
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Dr. Marcelo Fagundes</span>
+            <span class="sitename">Dr. Marcelo Freitas de Cabral Fagundes</span>
           </a>
-          <div class="footer-contact pt-3">
-            <p>SHLN Conjunto G Lote 7</p>
-            <p>Asa Norte, Brasília - DF, 70310-500</p>
-            <p class="mt-3"><strong>Telefone:</strong> <span>(61) 99999-9999</span></p>
-            <p><strong>E-mail:</strong> <span>contato@drmarcelofagundes.com.br</span></p>
-            <p><strong>Doctoralia:</strong> <a
-                href="https://www.doctoralia.com.br/marcelo-freitas-de-cabral-fagundes/ginecologista/brasilia"
-                target="_blank" class="texto-footer mao-link"><span class="sitename">link</span></a></p>
-            <p><strong>Medbook:</strong> <a href="https://medbook.com.br/mcfagundes" target="_blank"
-                class="texto-footer mao-link"><span class="sitename">link</span></a></p>
+
+          <div class="footer-contact">
+            <p class="mt-1 mb-2"><strong>CRM-DF 7771</strong></p>
+
+            <p><strong>Consultórios:</strong></p>
+
+            <p class="mb-1"><strong>Asa Sul:</strong></p>
+            <p class="small">
+              Centro Médico Júlio Adnet – SEPS Q 709/909, Bloco A, Torre A, Sala 324<br>
+              <i class="bi bi-telephone"></i> (61) 3245-4785 &nbsp;|&nbsp; <i class="bi bi-whatsapp"></i> (61)
+              99664-0890
+            </p>
+
+            <p class="mt-3 mb-1"><strong>Asa Norte:</strong></p>
+            <p class="small">
+              Hospital Santa Lúcia Norte – SHLN Conjunto G, Lote 7<br>
+              <i class="bi bi-telephone"></i> (61) 3448-9100 <span class="text-info">(Ramal do Ambulatório)</span>
+            </p>
+
+            <!-- Links opcionais -->
+            <!-- 
+    <p><strong>Doctoralia:</strong> 
+      <a href="https://www.doctoralia.com.br/marcelo-freitas-de-cabral-fagundes/ginecologista/brasilia" 
+         target="_blank" class="texto-footer mao-link">link</a>
+    </p>
+    <p><strong>Medbook:</strong> 
+      <a href="https://medbook.com.br/mcfagundes" target="_blank" class="texto-footer mao-link">link</a>
+    </p>
+    -->
           </div>
+
           <div class="social-links d-flex mt-4">
-            <!-- <a href="#" title="X (Twitter)"><i class="bi bi-twitter-x"></i></a> -->
-            <!-- <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a> -->
-            <a href="https://www.instagram.com/drmarcelofagundes/" title="Instagram" target="_blank"><i
-                class="bi bi-instagram"></i></a>
-            <!-- <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a> -->
+            <a href="https://www.instagram.com/drmarcelofagundes/" title="Instagram" target="_blank" class="mao-link">
+              <i class="bi bi-instagram"></i>
+            </a>
           </div>
         </div>
+
 
         <!-- Coluna 2 -->
         <div class="col-lg-2 col-md-3 footer-links">
@@ -1217,7 +1280,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>2025 - Copyright</span> <strong class="px-1 sitename">Dr. Marcelo Fagundes</strong>
+      <p>© <span>2025 - Copyright</span> <strong class="px-1 sitename">Dr. Marcelo Freitas de Cabral Fagundes</strong>
         <span>Todos os direitos reservados</span>
       </p>
       <!-- <div class="credits">
