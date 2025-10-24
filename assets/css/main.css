@@ -1991,3 +1991,22 @@ section .icon-box.destaque:hover {
   font-weight: 700;
   color: var(--accent-color, #0d6efd);
 }
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+  color: white;
+}
