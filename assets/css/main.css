@@ -1992,7 +1992,7 @@ section .icon-box.destaque:hover {
   color: var(--accent-color, #0d6efd);
 }
 
-.btn-whatsapp {
+/* .btn-whatsapp {
   background-color: #25D366;
   color: white;
   font-weight: 600;
@@ -2003,10 +2003,45 @@ section .icon-box.destaque:hover {
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
-}
+} */
 
-.btn-whatsapp:hover {
+/* .btn-whatsapp:hover {
   background-color: #1ebe5d;
   transform: scale(1.05);
   color: white;
+} */
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(3 94 154 / 89%);
+  /* azul translúcido */
+  color: #fff;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 10px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
+}
+
+.gallery-item:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
 }
